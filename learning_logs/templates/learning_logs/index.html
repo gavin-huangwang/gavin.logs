@@ -1,0 +1,16 @@
+{% extends 'learning_logs/base.html' %}
+
+{% block header %}
+  <div class='jumbotron'>
+    <h1>Document your life</h1>
+  </div>
+{% endblock header %}
+
+{% block content %}
+  <h2>
+	<a href='{% url 'users:register' %}'>REGISTER ACCOUNT</a>Lists the topic,Record the good in life
+  </h2>
+  <h2>
+   Whenever, wherever, Think what, what records.
+  </h2>
+{% endblock content %}

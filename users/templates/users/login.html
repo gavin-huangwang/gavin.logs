@@ -1,0 +1,25 @@
+{% extends 'learning_logs/base.html' %}
+{% load bootstrap3 %}
+
+{% block header %}
+  <h2>LOG IN TO YOUR ACCOUNT</h2>
+{% endblock header %}
+ 
+{% block content %}
+  
+  {% if form.errors %}
+  <h3>输入的用户名和密码不正确，请重新输入。</h3>
+  {% endif %}  
+  
+  <form method='post' action='{% url 'users:login' %}' class='form'>
+    {% csrf_token %}
+	{% bootstrap_form form %}
+	
+	{% buttons %}
+	  <button name='submit' class='btn-primary'>Login In</button>
+	{% endbuttons %}
+	
+	<input type='hidden' name='next' value='{% url 'learning_logs:index' %}'/>
+  </form>
+	
+{% endblock content %}
